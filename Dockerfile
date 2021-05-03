@@ -9,6 +9,7 @@ FROM python:3.9-alpine
 WORKDIR /opt/python-gitlab
 COPY --from=build /opt/python-gitlab/dist dist/
 RUN pip install PyYaml
+Run echo test
 RUN pip install $(find dist -name *.whl) && \
     rm -rf dist/
 COPY docker-entrypoint.sh /usr/local/bin/
